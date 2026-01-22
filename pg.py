@@ -1,3 +1,4 @@
+# A Password Generator, customizable with options for length, numbers, and special characters.
 import random
 import string
 
