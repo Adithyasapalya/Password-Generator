@@ -6,5 +6,27 @@ def generate_password(min_len, numbers=True, special_chars=True):
     digits = string.digits
     special = string.punctuation
 
+    characters = letters
+    if numbers:
+        characters += digits
+    if special_chars:
+        characters += special
+        
+    pwd = " "
+    meet_criteria = False
+    has_numbers = False
+    has_special = False
+
+    while not meet_criteria or len (pwd) < min_len:
+        new_char = random.choice(characters)
+        pwd += new_char
+
+        if new_char in digits:
+            has_numbers = True
+        elif new_char in special:
+            has_special = True
+
+
+        
 
 generate_password(10)
